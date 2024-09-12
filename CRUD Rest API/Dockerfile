@@ -1,20 +1,22 @@
 # Use officical image for Golang
-FROM golang:1.16.3-alpine3.13
+FROM golang:1.23.1
 
 # Set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
+
+# pre-copy/cache go.mod for pre-downloading dependencies and
+# only redownloading them in subsequent builds if they change
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
 
 # Copy all files from current directory to /app in container
 COPY . .
 
-# Download all dependencies
-RUN go get -d -v ./...
-
 # Build the application
-RUN go bu-ild -o main .
+RUN go build -v -o /usr/local/bin/app ./...
 
 # Expose port 8080 to the outside world
-EXPOSE 8000
+EXPOSE 8080
 
 # Command to run the application
-CMD [ "go run" "main.go"]
+CMD ["go", "run", "main.go"]

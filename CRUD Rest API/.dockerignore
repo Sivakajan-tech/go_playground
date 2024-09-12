@@ -1,0 +1,7 @@
+*.log
+*.exe
+.git
+*.md
+
+# Exclude the mysql build directory
+mysql
