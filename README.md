@@ -4,7 +4,7 @@ This repository contains a Go application that provides a basic RESTful API for 
 
 ## Applications
 
-1. **[User Management CRUD API](<./CRUD Rest API>)**  
+1. **[User Management CRUD API](<./crud_rest_api>)**  
    A RESTful API that handles the following operations:
 
    - Create new users

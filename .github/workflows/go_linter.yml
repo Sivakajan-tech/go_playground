@@ -24,4 +24,4 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: v1.60
-          working-directory: ./CRUD%20Rest%20API
+          working-directory: ./crud_rest_api
