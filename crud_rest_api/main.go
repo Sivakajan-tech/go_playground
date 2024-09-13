@@ -88,7 +88,7 @@ func getUsers(db *sql.DB) http.HandlerFunc {
 			log.Fatal(err)
 		}
 
-		err := json.NewEncoder(w).Encode(users)
+		err = json.NewEncoder(w).Encode(users)
 		if err != nil {
 			http.Error(w, "Failed to encode users data", http.StatusInternalServerError)
 			return
@@ -111,7 +111,7 @@ func getUser(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		err := json.NewEncoder(w).Encode(users)
+		err := json.NewEncoder(w).Encode(user)
 		if err != nil {
 			http.Error(w, "Failed to encode users data", http.StatusInternalServerError)
 			return
@@ -138,7 +138,7 @@ func createUser(db *sql.DB) http.HandlerFunc {
 		id, _ := result.LastInsertId()
 		user.Id = int(id)
 
-		err := json.NewEncoder(w).Encode(users)
+		err = json.NewEncoder(w).Encode(user)
 		if err != nil {
 			http.Error(w, "Failed to encode users data", http.StatusInternalServerError)
 			return
@@ -164,7 +164,7 @@ func updateUser(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		err := json.NewEncoder(w).Encode(users)
+		err = json.NewEncoder(w).Encode(user)
 		if err != nil {
 			http.Error(w, "Failed to encode users data", http.StatusInternalServerError)
 			return
