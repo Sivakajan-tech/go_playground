@@ -12,7 +12,16 @@ This repository contains a Go application that provides a basic RESTful API for 
    - Update existing users
    - Delete users
 
-2. **More Applications Coming Soon**  
+2. **[Event Driven Programming with Kafka](<./kafka>)**
+   A event-driven programming using Go and Kafka.
+
+   - Understanding Kafka’s role in event-driven systems
+   - Enhancing communication between microservices
+   - Asynchronous processing using Kafka streams
+   - Building producers and consumers in Go
+   - Exploring Kafka’s fault tolerance and scalability
+
+3. **More Applications Coming Soon**  
    This repository will be expanded with additional Go applications to practice and explore more features and technologies, such as:
    - WebSocket applications
    - Background job processing
