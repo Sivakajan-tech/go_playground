@@ -3,13 +3,16 @@ module github.com/sivakajan-tech/go_playground
 go 1.23.1
 
 require (
-	github.com/IBM/sarama v1.43.3 // indirect
+	github.com/IBM/sarama v1.43.3
+	github.com/gofiber/fiber/v3 v3.0.0-beta.3
+)
+
+require (
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/eapache/go-resiliency v1.7.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20230731223053-c322873962e3 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
-	github.com/gofiber/fiber/v3 v3.0.0-beta.3 // indirect
 	github.com/gofiber/utils/v2 v2.0.0-beta.6 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/uuid v1.6.0 // indirect

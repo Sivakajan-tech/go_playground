@@ -25,3 +25,9 @@ jobs:
         with:
           version: v1.60
           working-directory: ./crud_rest_api
+
+      - name: Run golangci-lint in dir2
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.60
+          working-directory: ./kafka
