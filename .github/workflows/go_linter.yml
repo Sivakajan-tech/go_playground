@@ -31,3 +31,9 @@ jobs:
         with:
           version: v1.60
           working-directory: ./kafka
+
+      - name: Run golangci-lint in dir3
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.60
+          working-directory: ./load_balancer
