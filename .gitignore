@@ -1,1 +1,4 @@
 crud_rest_api/mysql
+
+# Ignore derived pb files
+*.pb.go
