@@ -6,4 +6,7 @@ PROTO_FILES = proto/greet.proto
 proto: $(PROTO_FILES)
 	protoc --go_out=$(OUT_DIR) --go-grpc_out=$(OUT_DIR) $(PROTO_FILES)
 
+lint:
+	golangci-lint run
+
 .PHONY: proto

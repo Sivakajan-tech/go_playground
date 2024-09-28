@@ -24,4 +24,6 @@ func main() {
 	names := &pb.NameList{
 		Names: []string{"Alice", "Bob", "Charlie"},
 	}
+
+	callSayHelloServerStream(client, names)
 }
