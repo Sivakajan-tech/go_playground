@@ -7,17 +7,21 @@ import (
 	pb "github.com/Sivakajan-tech/go_playground/greeting_grpc/proto"
 )
 
-func (s *helloServer) SayHelloClientStream(stream pb.GreetService_SayHelloClientStreamServer) error {
-	var messages []string
+func (s *helloServer) SayHelloBiDiStream(stream pb.GreetService_SayHelloBiDiStreamServer) error {
 	for {
 		req, err := stream.Recv()
 		if err == io.EOF {
-			return stream.SendAndClose(&pb.MessageList{Messages: messages})
+			return nil
 		}
 		if err != nil {
 			return err
 		}
 		log.Printf("Got request with name : %v", req.Name)
-		messages = append(messages, "Hello "+req.Name)
+		res := &pb.HelloResponse{
+			Message: "Hello " + req.Name,
+		}
+		if err := stream.Send(res); err != nil {
+			return err
+		}
 	}
 }
