@@ -7,7 +7,7 @@ import (
 	pb "github.com/Sivakajan-tech/go_playground/greeting_grpc/proto"
 )
 
-func (s *helloServer) SayHelloClientStream(req *pb.NameList, stream pb.GreetService_SayHelloClientStreamServer) error {
+func (s *helloServer) SayHelloClientStream(stream pb.GreetService_SayHelloClientStreamServer, req *pb.NameList) error {
 	var message []string
 	for {
 		msg, err := stream.Recv()
